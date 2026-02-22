@@ -1,11 +1,13 @@
-name : Hello Actions
+name : Scheduled Test
 
 on:
-  workflow_dispatch:
+  schedule:
+    - cron: "*/1 * * * *"
+    workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Print Hello
-        run: echo "Hello HeLLO"
+        run: echo "Hello HeLLO"; date
